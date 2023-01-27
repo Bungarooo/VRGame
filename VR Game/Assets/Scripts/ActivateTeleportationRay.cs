@@ -11,9 +11,12 @@ public class ActivateTeleportationRay : MonoBehaviour
     [SerializeField] InputActionProperty leftActivate;
     [SerializeField] InputActionProperty rightActivate;
 
+    [SerializeField] InputActionProperty leftCancel;
+    [SerializeField] InputActionProperty rightCancel;
+
     void Update()
     {
-        leftTeleportation.SetActive(leftActivate.action.ReadValue<float>() > 0.025f);
-        rightTeleportation.SetActive(rightActivate.action.ReadValue<float>() > 0.025f);
+        leftTeleportation.SetActive(leftCancel.action.ReadValue<float>() == 0 && leftActivate.action.ReadValue<float>() > 0.025f);
+        rightTeleportation.SetActive(rightCancel.action.ReadValue<float>() == 0 && rightActivate.action.ReadValue<float>() > 0.025f);
     }
 }

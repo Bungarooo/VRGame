@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Debugger : MonoBehaviour
 {
-    [SerializeField] InputActionProperty leftActivate;
+    //[SerializeField] InputActionProperty leftActivate;
     void Start()
     {
         
@@ -13,6 +13,6 @@ public class Debugger : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(leftActivate.action.ReadValue<float>());
+        //Debug.Log(leftActivate.action.ReadValue<float>());
     }
 }
